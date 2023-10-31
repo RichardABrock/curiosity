@@ -130,57 +130,57 @@ div.csl-indent {
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpUFtubi/downloaded_packages</code></pre>
+    /var/folders/ny/g9yqm9zd6vv15wbb2210pklr0000gr/T//RtmpSvbIUG/downloaded_packages</code></pre>
 </div>
 </div>
 </section>
@@ -253,9 +253,14 @@ The downloaded binary packages are in
 <p>Students in cities shown in table x took part in the data collection</p>
 <p>Table x: Participating cities</p>
 <table class="table">
+<thead>
+<tr class="header">
+<th>Participating Cities</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>Bogotá, Colombia</td>
+<td>Bogotá, Colombia</td>
 </tr>
 <tr class="even">
 <td>Daegu, South Korea</td>
@@ -997,31 +1002,198 @@ Variances:
 </div>
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I like the diagram it produces - I'm going to try using this</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Another thing one can do with <code>lavaan</code> is to propose some latent variables and investigate their explanatory effectiveness. We might propose a psychological latent variable (lv1) composed of (<code>st_wellbeing</code> and <code>st_anxtest</code>) and a social environment latent variable (lv2) composed of (<code>st_bully</code>, <code>st_friends</code>, <code>st_belong</code>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First we tell lavaan what we want to model, note =~ indicates latent variables</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="st">"lv1 =~st_wellbeing + st_anxtest</span></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="st">        lv2 =~ st_bully + st_friends + st_belong</span></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="st">        STA_CUR01 ~ lv1 + lv2"</span></span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>SSES)</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>lavaan 0.6.16 ended normally after 135 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        14
+
+                                                  Used       Total
+  Number of observations                         56955       61010
+
+Model Test User Model:
+                                                      
+  Test statistic                              2247.287
+  Degrees of freedom                                 7
+  P-value (Chi-square)                           0.000
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  lv1 =~                                              
+    st_wellbeing      1.000                           
+    st_anxtest       -0.371    0.009  -43.506    0.000
+  lv2 =~                                              
+    st_bully          1.000                           
+    st_friends       -1.977    0.033  -60.394    0.000
+    st_belong        -2.831    0.047  -60.336    0.000
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  STA_CUR01 ~                                         
+    lv1               0.009    0.001    8.165    0.000
+    lv2              -0.021    0.003   -7.939    0.000
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  lv1 ~~                                              
+    lv2             -28.570    0.522  -54.757    0.000
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+   .st_wellbeing     82.202    2.223   36.983    0.000
+   .st_anxtest      162.545    1.008  161.219    0.000
+   .st_bully        139.913    0.858  163.038    0.000
+   .st_friends      112.587    0.850  132.439    0.000
+   .st_belong        52.712    1.087   48.507    0.000
+   .STA_CUR01         0.766    0.005  166.817    0.000
+    lv1              99.204    2.371   41.841    0.000
+    lv2              14.524    0.446   32.545    0.000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="OECDCuriosity2_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Neither of the proposed latent variables seem to have much influence!</span></span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="co"># An alternative is to the use the items to construct latent variables for e.g. cooperation, empathy, emotional control</span></span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="st">"lv1 =~STA_COO01 + STA_COO02 + STA_COO03+ STA_COO04 + STA_COO05   </span></span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a><span class="st">              +STA_COO06 + STA_COO07</span></span>
+<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a><span class="st">        lv2 =~ STA_EMP01 + STA_EMP02 + STA_EMP03+ STA_EMP04 + STA_EMP05   </span></span>
+<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a><span class="st">              +STA_EMP06 + STA_EMP07</span></span>
+<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a><span class="st">        lv3 =~ STA_EMO01 + STA_EMO02 + STA_EMO03+ STA_EMO04 + STA_EMO05   </span></span>
+<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a><span class="st">              +STA_EMO06 + STA_EMO07</span></span>
+<span id="cb83-11"><a href="#cb83-11" aria-hidden="true" tabindex="-1"></a><span class="st">        STA_CUR01 ~ lv1 + lv2 +lv3"</span></span>
+<span id="cb83-12"><a href="#cb83-12" aria-hidden="true" tabindex="-1"></a>fit<span class="ot">&lt;-</span><span class="fu">sem</span>(model, <span class="at">data=</span>SSES)</span>
+<span id="cb83-13"><a href="#cb83-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>lavaan 0.6.16 ended normally after 54 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        49
+
+                                                  Used       Total
+  Number of observations                         58236       61010
+
+Model Test User Model:
+                                                       
+  Test statistic                              57854.957
+  Degrees of freedom                                204
+  P-value (Chi-square)                            0.000
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  lv1 =~                                              
+    STA_COO01         1.000                           
+    STA_COO02         0.974    0.008  124.516    0.000
+    STA_COO03         0.998    0.008  122.842    0.000
+    STA_COO04        -0.604    0.009  -67.529    0.000
+    STA_COO05         0.895    0.007  122.874    0.000
+    STA_COO06         1.161    0.009  136.313    0.000
+    STA_COO07         1.214    0.009  138.124    0.000
+  lv2 =~                                              
+    STA_EMP01         1.000                           
+    STA_EMP02         0.741    0.008   87.481    0.000
+    STA_EMP03         1.030    0.010   98.555    0.000
+    STA_EMP04         1.163    0.011  105.321    0.000
+    STA_EMP05         0.938    0.011   87.553    0.000
+    STA_EMP06         1.129    0.011  106.165    0.000
+    STA_EMP07         1.043    0.011   98.649    0.000
+  lv3 =~                                              
+    STA_EMO01         1.000                           
+    STA_EMO02         1.141    0.012   94.318    0.000
+    STA_EMO03        -1.537    0.016  -96.644    0.000
+    STA_EMO04         1.378    0.014   97.529    0.000
+    STA_EMO05        -1.198    0.014  -85.592    0.000
+    STA_EMO06        -0.974    0.013  -76.157    0.000
+    STA_EMO07         0.960    0.012   80.212    0.000
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  STA_CUR01 ~                                         
+    lv1               0.216    0.023    9.283    0.000
+    lv2               0.468    0.024   19.174    0.000
+    lv3              -0.120    0.009  -13.344    0.000
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+  lv1 ~~                                              
+    lv2               0.231    0.003   91.113    0.000
+    lv3               0.130    0.002   64.195    0.000
+  lv2 ~~                                              
+    lv3               0.097    0.002   53.036    0.000
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)
+   .STA_COO01         0.411    0.003  150.258    0.000
+   .STA_COO02         0.449    0.003  153.010    0.000
+   .STA_COO03         0.498    0.003  153.919    0.000
+   .STA_COO04         0.982    0.006  167.558    0.000
+   .STA_COO05         0.400    0.003  153.902    0.000
+   .STA_COO06         0.430    0.003  144.313    0.000
+   .STA_COO07         0.440    0.003  142.470    0.000
+   .STA_EMP01         0.538    0.004  152.440    0.000
+   .STA_EMP02         0.534    0.003  160.668    0.000
+   .STA_EMP03         0.679    0.004  155.390    0.000
+   .STA_EMP04         0.656    0.004  150.407    0.000
+   .STA_EMP05         0.853    0.005  160.641    0.000
+   .STA_EMP06         0.596    0.004  149.638    0.000
+   .STA_EMP07         0.693    0.004  155.332    0.000
+   .STA_EMO01         0.928    0.006  155.821    0.000
+   .STA_EMO02         0.593    0.004  140.150    0.000
+   .STA_EMO03         0.896    0.007  134.005    0.000
+   .STA_EMO04         0.667    0.005  131.047    0.000
+   .STA_EMO05         1.120    0.007  152.995    0.000
+   .STA_EMO06         1.193    0.007  159.725    0.000
+   .STA_EMO07         0.951    0.006  157.329    0.000
+   .STA_CUR01         0.696    0.004  165.012    0.000
+    lv1               0.287    0.004   80.782    0.000
+    lv2               0.251    0.004   67.170    0.000
+    lv3               0.288    0.005   55.349    0.000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semPaths</span>(fit, <span class="at">whatLabels =</span> <span class="st">"Estimate"</span>, <span class="at">rotation=</span><span class="dv">2</span>, <span class="at">edge.label.cex =</span> <span class="fl">0.8</span>, <span class="at">sizeMan =</span><span class="dv">3</span>, <span class="st">"std"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="OECDCuriosity2_files/figure-html/unnamed-chunk-15-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Interesting that the empathy latent variable has the highest loading here, and that the loading of the emotion latent variable is negative!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="bayesian-multiple-model-fitting" class="level3">
 <h3 class="anchored" data-anchor-id="bayesian-multiple-model-fitting">Bayesian Multiple Model Fitting</h3>
 <p>This approach is not recommended:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>“Let the computer find out” is a poor strategy and usually reflects the fact that the researcher didnot bother to think clearly about the problem of interest and its scientific setting <span class="citation" data-cites="burnham2007">(<a href="#ref-burnham2007" role="doc-biblioref"><strong>burnham2007?</strong></a>)</span></p>
-</div>
-</div>
+<blockquote class="blockquote">
+<p>“Let the computer find out” is a poor strategy and usually reflects the fact that the researcher did not bother to think clearly about the problem of interest and its scientific setting” - <span class="citation" data-cites="anderson2004">(<a href="#ref-anderson2004" role="doc-biblioref"><strong>anderson2004?</strong></a>)</span></p>
+</blockquote>
 <p>But the <code>BayesFactor</code> package allows you to generate multiple models, based on different combinations of variables in a data set and compare their predictive power.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a subset of the data frame, including variables we want to include in model building (+ need to remove NAs) </span></span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>SESSsubset<span class="ot">&lt;-</span>SSES<span class="sc">%&gt;%</span></span>
-<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(STA_CUR01, SiteID, Gender_Std, STA_ASS01,STA_EMO01,</span>
-<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>         STA_ENE01,STA_OPT01)<span class="sc">%&gt;%</span></span>
-<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a><span class="co"># call regressionBD to create different models for the STA_CUR01 variable using all the other variables in the data frame </span></span>
-<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>models<span class="ot">&lt;-</span><span class="fu">regressionBF</span>(STA_CUR01 <span class="sc">~</span> ., <span class="at">data =</span> SESSsubset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a subset of the data frame, including variables we want to include in model building (+ need to remove NAs) </span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>SESSsubset<span class="ot">&lt;-</span>SSES<span class="sc">%&gt;%</span></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(STA_CUR01, SiteID, Gender_Std, STA_ASS01,STA_EMO01,</span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>         STA_ENE01,STA_OPT01)<span class="sc">%&gt;%</span></span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a><span class="co"># call regressionBD to create different models for the STA_CUR01 variable using all the other variables in the data frame </span></span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>models<span class="ot">&lt;-</span><span class="fu">regressionBF</span>(STA_CUR01 <span class="sc">~</span> ., <span class="at">data =</span> SESSsubset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: data coerced from tibble to data frame</code></pre>
 </div>
@@ -1091,12 +1263,12 @@ Error in nWayFormula(formula = formula, data = data, dataTypes = dataTypes,  :
 Error in nWayFormula(formula = formula, data = data, dataTypes = dataTypes,  : 
   formal argument "dataTypes" matched by multiple actual arguments</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only the relevant part of the output</span></span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(models<span class="sc">@</span>bayesFactor)</span>
-<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange the output</span></span>
-<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span>output<span class="sc">%&gt;%</span></span>
-<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(output<span class="sc">$</span>bf))</span>
-<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only the relevant part of the output</span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(models<span class="sc">@</span>bayesFactor)</span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange the output</span></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span>output<span class="sc">%&gt;%</span></span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(output<span class="sc">$</span>bf))</span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                                             bf
 Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          1943.687384
@@ -1227,148 +1399,148 @@ SiteID + Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                       NA
 SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                        NA
 SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01           NA
                                                                                         time
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          Tue Oct 31 13:59:42 2023
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                      Tue Oct 31 13:59:41 2023
-Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                      Tue Oct 31 13:59:42 2023
-Gender_Std + STA_ASS01 + STA_ENE01                                  Tue Oct 31 13:59:41 2023
-STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                       Tue Oct 31 13:59:42 2023
-STA_ASS01 + STA_EMO01 + STA_ENE01                                   Tue Oct 31 13:59:41 2023
-STA_ASS01 + STA_ENE01 + STA_OPT01                                   Tue Oct 31 13:59:41 2023
-STA_ASS01 + STA_ENE01                                               Tue Oct 31 13:59:41 2023
-Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                      Tue Oct 31 13:59:42 2023
-Gender_Std + STA_EMO01 + STA_ENE01                                  Tue Oct 31 13:59:41 2023
-Gender_Std + STA_ENE01 + STA_OPT01                                  Tue Oct 31 13:59:41 2023
-Gender_Std + STA_ENE01                                              Tue Oct 31 13:59:41 2023
-STA_EMO01 + STA_ENE01 + STA_OPT01                                   Tue Oct 31 13:59:41 2023
-STA_EMO01 + STA_ENE01                                               Tue Oct 31 13:59:41 2023
-STA_ENE01 + STA_OPT01                                               Tue Oct 31 13:59:41 2023
-STA_ENE01                                                           Tue Oct 31 13:59:40 2023
-Gender_Std + STA_ASS01 + STA_EMO01                                  Tue Oct 31 13:59:41 2023
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                      Tue Oct 31 13:59:42 2023
-STA_ASS01 + STA_EMO01                                               Tue Oct 31 13:59:41 2023
-STA_ASS01 + STA_EMO01 + STA_OPT01                                   Tue Oct 31 13:59:41 2023
-Gender_Std + STA_ASS01                                              Tue Oct 31 13:59:41 2023
-Gender_Std + STA_ASS01 + STA_OPT01                                  Tue Oct 31 13:59:41 2023
-STA_ASS01                                                           Tue Oct 31 13:59:40 2023
-STA_ASS01 + STA_OPT01                                               Tue Oct 31 13:59:41 2023
-Gender_Std + STA_EMO01                                              Tue Oct 31 13:59:41 2023
-Gender_Std + STA_EMO01 + STA_OPT01                                  Tue Oct 31 13:59:41 2023
-STA_EMO01                                                           Tue Oct 31 13:59:40 2023
-STA_EMO01 + STA_OPT01                                               Tue Oct 31 13:59:41 2023
-Gender_Std + STA_OPT01                                              Tue Oct 31 13:59:41 2023
-Gender_Std                                                          Tue Oct 31 13:59:40 2023
-STA_OPT01                                                           Tue Oct 31 13:59:40 2023
-SiteID                                                              Tue Oct 31 13:59:40 2023
-SiteID + Gender_Std                                                 Tue Oct 31 13:59:40 2023
-SiteID + STA_ASS01                                                  Tue Oct 31 13:59:40 2023
-SiteID + STA_EMO01                                                  Tue Oct 31 13:59:40 2023
-SiteID + STA_ENE01                                                  Tue Oct 31 13:59:40 2023
-SiteID + STA_OPT01                                                  Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_ASS01                                     Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_EMO01                                     Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_ENE01                                     Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_OPT01                                     Tue Oct 31 13:59:41 2023
-SiteID + STA_ASS01 + STA_EMO01                                      Tue Oct 31 13:59:41 2023
-SiteID + STA_ASS01 + STA_ENE01                                      Tue Oct 31 13:59:41 2023
-SiteID + STA_ASS01 + STA_OPT01                                      Tue Oct 31 13:59:41 2023
-SiteID + STA_EMO01 + STA_ENE01                                      Tue Oct 31 13:59:41 2023
-SiteID + STA_EMO01 + STA_OPT01                                      Tue Oct 31 13:59:41 2023
-SiteID + STA_ENE01 + STA_OPT01                                      Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01                         Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01                         Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_ASS01 + STA_OPT01                         Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01                         Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_EMO01 + STA_OPT01                         Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_ENE01 + STA_OPT01                         Tue Oct 31 13:59:41 2023
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01                          Tue Oct 31 13:59:41 2023
-SiteID + STA_ASS01 + STA_EMO01 + STA_OPT01                          Tue Oct 31 13:59:41 2023
-SiteID + STA_ASS01 + STA_ENE01 + STA_OPT01                          Tue Oct 31 13:59:41 2023
-SiteID + STA_EMO01 + STA_ENE01 + STA_OPT01                          Tue Oct 31 13:59:41 2023
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             Tue Oct 31 13:59:42 2023
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01             Tue Oct 31 13:59:42 2023
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01             Tue Oct 31 13:59:42 2023
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01             Tue Oct 31 13:59:42 2023
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              Tue Oct 31 13:59:42 2023
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 Tue Oct 31 13:59:42 2023
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          Tue Oct 31 15:53:57 2023
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                      Tue Oct 31 15:53:56 2023
+Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                      Tue Oct 31 15:53:56 2023
+Gender_Std + STA_ASS01 + STA_ENE01                                  Tue Oct 31 15:53:56 2023
+STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                       Tue Oct 31 15:53:56 2023
+STA_ASS01 + STA_EMO01 + STA_ENE01                                   Tue Oct 31 15:53:56 2023
+STA_ASS01 + STA_ENE01 + STA_OPT01                                   Tue Oct 31 15:53:56 2023
+STA_ASS01 + STA_ENE01                                               Tue Oct 31 15:53:56 2023
+Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                      Tue Oct 31 15:53:56 2023
+Gender_Std + STA_EMO01 + STA_ENE01                                  Tue Oct 31 15:53:56 2023
+Gender_Std + STA_ENE01 + STA_OPT01                                  Tue Oct 31 15:53:56 2023
+Gender_Std + STA_ENE01                                              Tue Oct 31 15:53:56 2023
+STA_EMO01 + STA_ENE01 + STA_OPT01                                   Tue Oct 31 15:53:56 2023
+STA_EMO01 + STA_ENE01                                               Tue Oct 31 15:53:56 2023
+STA_ENE01 + STA_OPT01                                               Tue Oct 31 15:53:56 2023
+STA_ENE01                                                           Tue Oct 31 15:53:56 2023
+Gender_Std + STA_ASS01 + STA_EMO01                                  Tue Oct 31 15:53:56 2023
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                      Tue Oct 31 15:53:56 2023
+STA_ASS01 + STA_EMO01                                               Tue Oct 31 15:53:56 2023
+STA_ASS01 + STA_EMO01 + STA_OPT01                                   Tue Oct 31 15:53:56 2023
+Gender_Std + STA_ASS01                                              Tue Oct 31 15:53:56 2023
+Gender_Std + STA_ASS01 + STA_OPT01                                  Tue Oct 31 15:53:56 2023
+STA_ASS01                                                           Tue Oct 31 15:53:56 2023
+STA_ASS01 + STA_OPT01                                               Tue Oct 31 15:53:56 2023
+Gender_Std + STA_EMO01                                              Tue Oct 31 15:53:56 2023
+Gender_Std + STA_EMO01 + STA_OPT01                                  Tue Oct 31 15:53:56 2023
+STA_EMO01                                                           Tue Oct 31 15:53:56 2023
+STA_EMO01 + STA_OPT01                                               Tue Oct 31 15:53:56 2023
+Gender_Std + STA_OPT01                                              Tue Oct 31 15:53:56 2023
+Gender_Std                                                          Tue Oct 31 15:53:56 2023
+STA_OPT01                                                           Tue Oct 31 15:53:56 2023
+SiteID                                                              Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std                                                 Tue Oct 31 15:53:56 2023
+SiteID + STA_ASS01                                                  Tue Oct 31 15:53:56 2023
+SiteID + STA_EMO01                                                  Tue Oct 31 15:53:56 2023
+SiteID + STA_ENE01                                                  Tue Oct 31 15:53:56 2023
+SiteID + STA_OPT01                                                  Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_ASS01                                     Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_EMO01                                     Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_ENE01                                     Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_OPT01                                     Tue Oct 31 15:53:56 2023
+SiteID + STA_ASS01 + STA_EMO01                                      Tue Oct 31 15:53:56 2023
+SiteID + STA_ASS01 + STA_ENE01                                      Tue Oct 31 15:53:56 2023
+SiteID + STA_ASS01 + STA_OPT01                                      Tue Oct 31 15:53:56 2023
+SiteID + STA_EMO01 + STA_ENE01                                      Tue Oct 31 15:53:56 2023
+SiteID + STA_EMO01 + STA_OPT01                                      Tue Oct 31 15:53:56 2023
+SiteID + STA_ENE01 + STA_OPT01                                      Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_ASS01 + STA_EMO01                         Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_ASS01 + STA_ENE01                         Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_ASS01 + STA_OPT01                         Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_EMO01 + STA_ENE01                         Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_EMO01 + STA_OPT01                         Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_ENE01 + STA_OPT01                         Tue Oct 31 15:53:56 2023
+SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01                          Tue Oct 31 15:53:56 2023
+SiteID + STA_ASS01 + STA_EMO01 + STA_OPT01                          Tue Oct 31 15:53:56 2023
+SiteID + STA_ASS01 + STA_ENE01 + STA_OPT01                          Tue Oct 31 15:53:56 2023
+SiteID + STA_EMO01 + STA_ENE01 + STA_OPT01                          Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01             Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01             Tue Oct 31 15:53:56 2023
+SiteID + Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01             Tue Oct 31 15:53:56 2023
+SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              Tue Oct 31 15:53:57 2023
+SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 Tue Oct 31 15:53:57 2023
                                                                             code
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          5dd372f47a9f
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                      5dd369c61593
-Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                      5dd33b2967f6
-Gender_Std + STA_ASS01 + STA_ENE01                                   5dd34aca54b
-STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                       5dd362f4cc0c
-STA_ASS01 + STA_EMO01 + STA_ENE01                                   5dd35bad15b0
-STA_ASS01 + STA_ENE01 + STA_OPT01                                   5dd3320a5cfd
-STA_ASS01 + STA_ENE01                                               5dd3197ad5d7
-Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                      5dd31b6865d2
-Gender_Std + STA_EMO01 + STA_ENE01                                  5dd3614a010f
-Gender_Std + STA_ENE01 + STA_OPT01                                  5dd33a3e79c7
-Gender_Std + STA_ENE01                                              5dd34dc3258c
-STA_EMO01 + STA_ENE01 + STA_OPT01                                   5dd3465effb5
-STA_EMO01 + STA_ENE01                                                5dd362a053b
-STA_ENE01 + STA_OPT01                                               5dd362dfdc49
-STA_ENE01                                                           5dd35a604e53
-Gender_Std + STA_ASS01 + STA_EMO01                                  5dd32ce74a05
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                      5dd34bb29c25
-STA_ASS01 + STA_EMO01                                               5dd3187a9b8f
-STA_ASS01 + STA_EMO01 + STA_OPT01                                   5dd3406b04d5
-Gender_Std + STA_ASS01                                              5dd32a939052
-Gender_Std + STA_ASS01 + STA_OPT01                                  5dd36297e152
-STA_ASS01                                                           5dd37d63bd30
-STA_ASS01 + STA_OPT01                                               5dd34f6d2352
-Gender_Std + STA_EMO01                                              5dd33de80d54
-Gender_Std + STA_EMO01 + STA_OPT01                                  5dd3418bb1af
-STA_EMO01                                                           5dd31f19daa0
-STA_EMO01 + STA_OPT01                                               5dd330bd67a6
-Gender_Std + STA_OPT01                                              5dd346d63236
-Gender_Std                                                          5dd346cdfc20
-STA_OPT01                                                           5dd368b6597f
-SiteID                                                              5dd3337ec171
-SiteID + Gender_Std                                                 5dd31badd68e
-SiteID + STA_ASS01                                                  5dd331e112d4
-SiteID + STA_EMO01                                                  5dd32f9b35e1
-SiteID + STA_ENE01                                                  5dd376ee5f31
-SiteID + STA_OPT01                                                  5dd31babc6f7
-SiteID + Gender_Std + STA_ASS01                                     5dd356f76f55
-SiteID + Gender_Std + STA_EMO01                                      5dd3eae620e
-SiteID + Gender_Std + STA_ENE01                                     5dd35aa78ca9
-SiteID + Gender_Std + STA_OPT01                                     5dd32e03d9be
-SiteID + STA_ASS01 + STA_EMO01                                      5dd37ecc608b
-SiteID + STA_ASS01 + STA_ENE01                                      5dd31bd686b6
-SiteID + STA_ASS01 + STA_OPT01                                      5dd321262501
-SiteID + STA_EMO01 + STA_ENE01                                      5dd34f4775a7
-SiteID + STA_EMO01 + STA_OPT01                                      5dd35c7d4f9a
-SiteID + STA_ENE01 + STA_OPT01                                      5dd326f536e6
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01                          5dd36e5e82b
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01                         5dd35fed6296
-SiteID + Gender_Std + STA_ASS01 + STA_OPT01                         5dd359e3970d
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01                         5dd36cd20495
-SiteID + Gender_Std + STA_EMO01 + STA_OPT01                         5dd3502b0a03
-SiteID + Gender_Std + STA_ENE01 + STA_OPT01                         5dd3399e7413
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01                          5dd351d6a8f2
-SiteID + STA_ASS01 + STA_EMO01 + STA_OPT01                          5dd363edd1d7
-SiteID + STA_ASS01 + STA_ENE01 + STA_OPT01                          5dd3126bad82
-SiteID + STA_EMO01 + STA_ENE01 + STA_OPT01                          5dd35b4c3b40
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             5dd335805a95
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01             5dd37dbb07a3
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01              5dd31f29ed2
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01             5dd35f98edfd
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              5dd33130ae13
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 5dd3109e97af</code></pre>
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          75825ddc4360
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                      75822c69d31e
+Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                      75822a601b02
+Gender_Std + STA_ASS01 + STA_ENE01                                  75827b7c8e5a
+STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                       758263d6d072
+STA_ASS01 + STA_EMO01 + STA_ENE01                                   75822806c20c
+STA_ASS01 + STA_ENE01 + STA_OPT01                                   7582319f3b48
+STA_ASS01 + STA_ENE01                                               75826892c78f
+Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                       7582b8d360a
+Gender_Std + STA_EMO01 + STA_ENE01                                  758227fca5a0
+Gender_Std + STA_ENE01 + STA_OPT01                                  75825b60ad22
+Gender_Std + STA_ENE01                                               7582d4e7b42
+STA_EMO01 + STA_ENE01 + STA_OPT01                                   75824ced0d6b
+STA_EMO01 + STA_ENE01                                                75822afa21e
+STA_ENE01 + STA_OPT01                                               75823780dd61
+STA_ENE01                                                           758279b8843a
+Gender_Std + STA_ASS01 + STA_EMO01                                  758224942aa8
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                      758257a36d59
+STA_ASS01 + STA_EMO01                                               758279bb11e0
+STA_ASS01 + STA_EMO01 + STA_OPT01                                   758253adb65b
+Gender_Std + STA_ASS01                                               75823e3ac2e
+Gender_Std + STA_ASS01 + STA_OPT01                                  75822e65f60c
+STA_ASS01                                                           758223c103e5
+STA_ASS01 + STA_OPT01                                               75827c6bb2eb
+Gender_Std + STA_EMO01                                              7582583d0200
+Gender_Std + STA_EMO01 + STA_OPT01                                  75823bddbfe2
+STA_EMO01                                                           758254e6c1b9
+STA_EMO01 + STA_OPT01                                               758258bc60f2
+Gender_Std + STA_OPT01                                              75821b7e30e1
+Gender_Std                                                          75825c17e12f
+STA_OPT01                                                           758240f13a44
+SiteID                                                              758233c5448e
+SiteID + Gender_Std                                                 75821d2867ab
+SiteID + STA_ASS01                                                  758247ae1a81
+SiteID + STA_EMO01                                                  7582774e2fea
+SiteID + STA_ENE01                                                  75822e2be8d7
+SiteID + STA_OPT01                                                  758244c392ef
+SiteID + Gender_Std + STA_ASS01                                     75826d4627be
+SiteID + Gender_Std + STA_EMO01                                     758218db62fe
+SiteID + Gender_Std + STA_ENE01                                     75826b401e71
+SiteID + Gender_Std + STA_OPT01                                     75823e8ec3b9
+SiteID + STA_ASS01 + STA_EMO01                                       7582ed3c6c5
+SiteID + STA_ASS01 + STA_ENE01                                      7582719eb71d
+SiteID + STA_ASS01 + STA_OPT01                                      75826b080b31
+SiteID + STA_EMO01 + STA_ENE01                                      75825d16f4dc
+SiteID + STA_EMO01 + STA_OPT01                                       7582e25c743
+SiteID + STA_ENE01 + STA_OPT01                                      7582523d06f6
+SiteID + Gender_Std + STA_ASS01 + STA_EMO01                         75825f0c1341
+SiteID + Gender_Std + STA_ASS01 + STA_ENE01                         758211c44127
+SiteID + Gender_Std + STA_ASS01 + STA_OPT01                         75826b91708d
+SiteID + Gender_Std + STA_EMO01 + STA_ENE01                         758219747027
+SiteID + Gender_Std + STA_EMO01 + STA_OPT01                         75822b6f1d7f
+SiteID + Gender_Std + STA_ENE01 + STA_OPT01                          7582bf99320
+SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01                          75822e2a2004
+SiteID + STA_ASS01 + STA_EMO01 + STA_OPT01                          75824f9bfe49
+SiteID + STA_ASS01 + STA_ENE01 + STA_OPT01                           7582a539374
+SiteID + STA_EMO01 + STA_ENE01 + STA_OPT01                          758274f5a9f7
+SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             75822c0f1f93
+SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01             758214e2027e
+SiteID + Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01              7582211a8e8
+SiteID + Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01             758255681867
+SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              7582251a3dff
+SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 758227cb83c4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The column we are interested in is bf, the Bayes Factor, which is a ratio of the likelihood of different models to a intercept only model (i.e. a horizontal line). So the best model with the variables I input is: STA_CUR01 ~ Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01, which has a bf of 1943 so us 1943 times better than an intercept only model</span></span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span>output<span class="sc">%&gt;%</span></span>
-<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(bf<span class="sc">&gt;</span><span class="dv">100</span>) <span class="co"># Get rid of NAs and there are lots of combinations of models so only plot the best!</span></span>
-<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(output, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(<span class="fu">rownames</span>(output), <span class="sc">-</span> bf), <span class="at">y=</span>bf, <span class="at">fill=</span><span class="fu">rownames</span>(output)))<span class="sc">+</span></span>
-<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>, <span class="at">size=</span><span class="dv">5</span>))<span class="sc">+</span></span>
-<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The column we are interested in is bf, the Bayes Factor, which is a ratio of the likelihood of different models to a intercept only model (i.e. a horizontal line). So the best model with the variables I input is: STA_CUR01 ~ Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01, which has a bf of 1943 so us 1943 times better than an intercept only model</span></span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span>output<span class="sc">%&gt;%</span></span>
+<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb92-5"><a href="#cb92-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(bf<span class="sc">&gt;</span><span class="dv">100</span>) <span class="co"># Get rid of NAs and there are lots of combinations of models so only plot the best!</span></span>
+<span id="cb92-6"><a href="#cb92-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-7"><a href="#cb92-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(output, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(<span class="fu">rownames</span>(output), <span class="sc">-</span> bf), <span class="at">y=</span>bf, <span class="at">fill=</span><span class="fu">rownames</span>(output)))<span class="sc">+</span></span>
+<span id="cb92-8"><a href="#cb92-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb92-9"><a href="#cb92-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>, <span class="at">size=</span><span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb92-10"><a href="#cb92-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="OECDCuriosity2_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<p><img src="OECDCuriosity2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># It is interesting to note how explanatory powerful even quite simple models are: STA_ASS01 + STA_ENE01 does surprisingly well! It explains 91% of the more complex Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># It is interesting to note how explanatory powerful even quite simple models are: STA_ASS01 + STA_ENE01 does surprisingly well! It explains 91% of the more complex Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
