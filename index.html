@@ -1130,7 +1130,7 @@ Variances:
 <h3 class="anchored" data-anchor-id="bayesian-multiple-model-fitting">Bayesian Multiple Model Fitting</h3>
 <p>This approach is not recommended:</p>
 <blockquote class="blockquote">
-<p>“Let the computer find out” is a poor strategy and usually reflects the fact that the researcher did not bother to think clearly about the problem of interest and its scientific setting” - <span class="citation" data-cites="anderson2004">(<a href="#ref-anderson2004" role="doc-biblioref"><strong>anderson2004?</strong></a>)</span></p>
+<p>“Let the computer find out” is a poor strategy and usually reflects the fact that the researcher did not bother to think clearly about the problem of interest and its scientific setting” - <span class="citation" data-cites="anderson2004model">(<a href="#ref-anderson2004model" role="doc-biblioref">Anderson and Burnham 2004, 147</a>)</span></p>
 </blockquote>
 <p>But the <code>BayesFactor</code> package allows you to generate multiple models, based on different combinations of variables in a data set and compare their predictive power.</p>
 <div class="cell">
@@ -1141,9 +1141,6 @@ Variances:
 <span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
 <span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a><span class="co"># call regressionBD to create different models for the STA_CUR01 variable using all the other variables in the data frame </span></span>
 <span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>models<span class="ot">&lt;-</span><span class="fu">regressionBF</span>(STA_CUR01 <span class="sc">~</span> ., <span class="at">data =</span> SESSsubset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: data coerced from tibble to data frame</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Error in nWayFormula(formula = formula, data = data, dataTypes = dataTypes,  : 
   formal argument "dataTypes" matched by multiple actual arguments
@@ -1210,292 +1207,67 @@ Error in nWayFormula(formula = formula, data = data, dataTypes = dataTypes,  :
 Error in nWayFormula(formula = formula, data = data, dataTypes = dataTypes,  : 
   formal argument "dataTypes" matched by multiple actual arguments</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only the relevant part of the output</span></span>
-<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(models<span class="sc">@</span>bayesFactor)</span>
-<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange the output</span></span>
-<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span>output<span class="sc">%&gt;%</span></span>
-<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(output<span class="sc">$</span>bf))</span>
-<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only the relevant part of the output</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(models<span class="sc">@</span>bayesFactor)</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange the output</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span>output<span class="sc">%&gt;%</span></span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(output<span class="sc">$</span>bf))</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                                                             bf
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          1943.687384
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                      1920.491853
-Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                      1892.657062
-Gender_Std + STA_ASS01 + STA_ENE01                                  1881.470401
-STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                       1831.107088
-STA_ASS01 + STA_EMO01 + STA_ENE01                                   1796.292445
-STA_ASS01 + STA_ENE01 + STA_OPT01                                   1793.644248
-STA_ASS01 + STA_ENE01                                               1772.114005
-Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                      1584.770908
-Gender_Std + STA_EMO01 + STA_ENE01                                  1563.431675
-Gender_Std + STA_ENE01 + STA_OPT01                                  1518.793666
-Gender_Std + STA_ENE01                                              1510.418057
-STA_EMO01 + STA_ENE01 + STA_OPT01                                   1472.712425
-STA_EMO01 + STA_ENE01                                               1440.176146
-STA_ENE01 + STA_OPT01                                               1422.127415
-STA_ENE01                                                           1404.453878
-Gender_Std + STA_ASS01 + STA_EMO01                                   841.410331
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                       838.477995
-STA_ASS01 + STA_EMO01                                                756.138033
-STA_ASS01 + STA_EMO01 + STA_OPT01                                    755.784730
-Gender_Std + STA_ASS01                                               721.786282
-Gender_Std + STA_ASS01 + STA_OPT01                                   719.301749
-STA_ASS01                                                            659.419024
-STA_ASS01 + STA_OPT01                                                655.169498
-Gender_Std + STA_EMO01                                               220.394531
-Gender_Std + STA_EMO01 + STA_OPT01                                   216.421823
-STA_EMO01                                                            140.781358
-STA_EMO01 + STA_OPT01                                                137.810211
-Gender_Std + STA_OPT01                                                55.075517
-Gender_Std                                                            53.271218
-STA_OPT01                                                             -2.419621
-SiteID                                                                       NA
-SiteID + Gender_Std                                                          NA
-SiteID + STA_ASS01                                                           NA
-SiteID + STA_EMO01                                                           NA
-SiteID + STA_ENE01                                                           NA
-SiteID + STA_OPT01                                                           NA
-SiteID + Gender_Std + STA_ASS01                                              NA
-SiteID + Gender_Std + STA_EMO01                                              NA
-SiteID + Gender_Std + STA_ENE01                                              NA
-SiteID + Gender_Std + STA_OPT01                                              NA
-SiteID + STA_ASS01 + STA_EMO01                                               NA
-SiteID + STA_ASS01 + STA_ENE01                                               NA
-SiteID + STA_ASS01 + STA_OPT01                                               NA
-SiteID + STA_EMO01 + STA_ENE01                                               NA
-SiteID + STA_EMO01 + STA_OPT01                                               NA
-SiteID + STA_ENE01 + STA_OPT01                                               NA
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01                                  NA
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01                                  NA
-SiteID + Gender_Std + STA_ASS01 + STA_OPT01                                  NA
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01                                  NA
-SiteID + Gender_Std + STA_EMO01 + STA_OPT01                                  NA
-SiteID + Gender_Std + STA_ENE01 + STA_OPT01                                  NA
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01                                   NA
-SiteID + STA_ASS01 + STA_EMO01 + STA_OPT01                                   NA
-SiteID + STA_ASS01 + STA_ENE01 + STA_OPT01                                   NA
-SiteID + STA_EMO01 + STA_ENE01 + STA_OPT01                                   NA
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                      NA
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                      NA
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                      NA
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                      NA
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                       NA
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          NA
-                                                                           error
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          1.193456e-04
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                      2.369470e-07
-Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                      4.057525e-07
-Gender_Std + STA_ASS01 + STA_ENE01                                  1.154868e-05
-STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                       6.819002e-05
-STA_ASS01 + STA_EMO01 + STA_ENE01                                   1.423306e-05
-STA_ASS01 + STA_ENE01 + STA_OPT01                                   1.432055e-05
-STA_ASS01 + STA_ENE01                                               9.911535e-06
-Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                      7.003227e-06
-Gender_Std + STA_EMO01 + STA_ENE01                                  6.702650e-05
-Gender_Std + STA_ENE01 + STA_OPT01                                  5.625264e-05
-Gender_Std + STA_ENE01                                              2.907455e-05
-STA_EMO01 + STA_ENE01 + STA_OPT01                                   4.631308e-05
-STA_EMO01 + STA_ENE01                                               3.588352e-05
-STA_ENE01 + STA_OPT01                                               3.770589e-05
-STA_ENE01                                                           3.977002e-05
-Gender_Std + STA_ASS01 + STA_EMO01                                  2.594487e-05
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                      5.893699e-05
-STA_ASS01 + STA_EMO01                                               2.533911e-05
-STA_ASS01 + STA_EMO01 + STA_OPT01                                   2.082319e-05
-Gender_Std + STA_ASS01                                              2.956267e-05
-Gender_Std + STA_ASS01 + STA_OPT01                                  1.825311e-05
-STA_ASS01                                                           7.076327e-05
-STA_ASS01 + STA_OPT01                                               3.871178e-05
-Gender_Std + STA_EMO01                                              1.181238e-04
-Gender_Std + STA_EMO01 + STA_OPT01                                  3.653685e-05
-STA_EMO01                                                           3.142987e-05
-STA_EMO01 + STA_OPT01                                               2.877895e-08
-Gender_Std + STA_OPT01                                              5.168361e-05
-Gender_Std                                                          2.072800e-05
-STA_OPT01                                                           1.735550e-05
-SiteID                                                                        NA
-SiteID + Gender_Std                                                           NA
-SiteID + STA_ASS01                                                            NA
-SiteID + STA_EMO01                                                            NA
-SiteID + STA_ENE01                                                            NA
-SiteID + STA_OPT01                                                            NA
-SiteID + Gender_Std + STA_ASS01                                               NA
-SiteID + Gender_Std + STA_EMO01                                               NA
-SiteID + Gender_Std + STA_ENE01                                               NA
-SiteID + Gender_Std + STA_OPT01                                               NA
-SiteID + STA_ASS01 + STA_EMO01                                                NA
-SiteID + STA_ASS01 + STA_ENE01                                                NA
-SiteID + STA_ASS01 + STA_OPT01                                                NA
-SiteID + STA_EMO01 + STA_ENE01                                                NA
-SiteID + STA_EMO01 + STA_OPT01                                                NA
-SiteID + STA_ENE01 + STA_OPT01                                                NA
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01                                   NA
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01                                   NA
-SiteID + Gender_Std + STA_ASS01 + STA_OPT01                                   NA
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01                                   NA
-SiteID + Gender_Std + STA_EMO01 + STA_OPT01                                   NA
-SiteID + Gender_Std + STA_ENE01 + STA_OPT01                                   NA
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01                                    NA
-SiteID + STA_ASS01 + STA_EMO01 + STA_OPT01                                    NA
-SiteID + STA_ASS01 + STA_ENE01 + STA_OPT01                                    NA
-SiteID + STA_EMO01 + STA_ENE01 + STA_OPT01                                    NA
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                       NA
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                       NA
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                       NA
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                       NA
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                        NA
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01           NA
-                                                                                        time
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          Wed Nov  1 08:11:09 2023
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                      Wed Nov  1 08:11:09 2023
-Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                      Wed Nov  1 08:11:09 2023
-Gender_Std + STA_ASS01 + STA_ENE01                                  Wed Nov  1 08:11:09 2023
-STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                       Wed Nov  1 08:11:09 2023
-STA_ASS01 + STA_EMO01 + STA_ENE01                                   Wed Nov  1 08:11:09 2023
-STA_ASS01 + STA_ENE01 + STA_OPT01                                   Wed Nov  1 08:11:09 2023
-STA_ASS01 + STA_ENE01                                               Wed Nov  1 08:11:09 2023
-Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                      Wed Nov  1 08:11:09 2023
-Gender_Std + STA_EMO01 + STA_ENE01                                  Wed Nov  1 08:11:09 2023
-Gender_Std + STA_ENE01 + STA_OPT01                                  Wed Nov  1 08:11:09 2023
-Gender_Std + STA_ENE01                                              Wed Nov  1 08:11:09 2023
-STA_EMO01 + STA_ENE01 + STA_OPT01                                   Wed Nov  1 08:11:09 2023
-STA_EMO01 + STA_ENE01                                               Wed Nov  1 08:11:09 2023
-STA_ENE01 + STA_OPT01                                               Wed Nov  1 08:11:09 2023
-STA_ENE01                                                           Wed Nov  1 08:11:08 2023
-Gender_Std + STA_ASS01 + STA_EMO01                                  Wed Nov  1 08:11:09 2023
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                      Wed Nov  1 08:11:09 2023
-STA_ASS01 + STA_EMO01                                               Wed Nov  1 08:11:09 2023
-STA_ASS01 + STA_EMO01 + STA_OPT01                                   Wed Nov  1 08:11:09 2023
-Gender_Std + STA_ASS01                                              Wed Nov  1 08:11:09 2023
-Gender_Std + STA_ASS01 + STA_OPT01                                  Wed Nov  1 08:11:09 2023
-STA_ASS01                                                           Wed Nov  1 08:11:08 2023
-STA_ASS01 + STA_OPT01                                               Wed Nov  1 08:11:09 2023
-Gender_Std + STA_EMO01                                              Wed Nov  1 08:11:09 2023
-Gender_Std + STA_EMO01 + STA_OPT01                                  Wed Nov  1 08:11:09 2023
-STA_EMO01                                                           Wed Nov  1 08:11:08 2023
-STA_EMO01 + STA_OPT01                                               Wed Nov  1 08:11:09 2023
-Gender_Std + STA_OPT01                                              Wed Nov  1 08:11:09 2023
-Gender_Std                                                          Wed Nov  1 08:11:08 2023
-STA_OPT01                                                           Wed Nov  1 08:11:09 2023
-SiteID                                                              Wed Nov  1 08:11:08 2023
-SiteID + Gender_Std                                                 Wed Nov  1 08:11:09 2023
-SiteID + STA_ASS01                                                  Wed Nov  1 08:11:09 2023
-SiteID + STA_EMO01                                                  Wed Nov  1 08:11:09 2023
-SiteID + STA_ENE01                                                  Wed Nov  1 08:11:09 2023
-SiteID + STA_OPT01                                                  Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ASS01                                     Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_EMO01                                     Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ENE01                                     Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_OPT01                                     Wed Nov  1 08:11:09 2023
-SiteID + STA_ASS01 + STA_EMO01                                      Wed Nov  1 08:11:09 2023
-SiteID + STA_ASS01 + STA_ENE01                                      Wed Nov  1 08:11:09 2023
-SiteID + STA_ASS01 + STA_OPT01                                      Wed Nov  1 08:11:09 2023
-SiteID + STA_EMO01 + STA_ENE01                                      Wed Nov  1 08:11:09 2023
-SiteID + STA_EMO01 + STA_OPT01                                      Wed Nov  1 08:11:09 2023
-SiteID + STA_ENE01 + STA_OPT01                                      Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01                         Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01                         Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ASS01 + STA_OPT01                         Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01                         Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_EMO01 + STA_OPT01                         Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ENE01 + STA_OPT01                         Wed Nov  1 08:11:09 2023
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01                          Wed Nov  1 08:11:09 2023
-SiteID + STA_ASS01 + STA_EMO01 + STA_OPT01                          Wed Nov  1 08:11:09 2023
-SiteID + STA_ASS01 + STA_ENE01 + STA_OPT01                          Wed Nov  1 08:11:09 2023
-SiteID + STA_EMO01 + STA_ENE01 + STA_OPT01                          Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01             Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01             Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01             Wed Nov  1 08:11:09 2023
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              Wed Nov  1 08:11:09 2023
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 Wed Nov  1 08:11:09 2023
-                                                                            code
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01          dd76546c4f5e
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01                      dd766a444f34
-Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01                       dd767b2bcfe
-Gender_Std + STA_ASS01 + STA_ENE01                                  dd765f6230e7
-STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01                       dd761b6cb11d
-STA_ASS01 + STA_EMO01 + STA_ENE01                                    dd76bda2c9f
-STA_ASS01 + STA_ENE01 + STA_OPT01                                   dd7654f9237a
-STA_ASS01 + STA_ENE01                                                dd769e6aee9
-Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01                      dd766795cba4
-Gender_Std + STA_EMO01 + STA_ENE01                                  dd76682a49a9
-Gender_Std + STA_ENE01 + STA_OPT01                                  dd76557941f8
-Gender_Std + STA_ENE01                                              dd763721d5e8
-STA_EMO01 + STA_ENE01 + STA_OPT01                                   dd7630884a2b
-STA_EMO01 + STA_ENE01                                               dd765ddedb71
-STA_ENE01 + STA_OPT01                                               dd766953269f
-STA_ENE01                                                            dd767757be1
-Gender_Std + STA_ASS01 + STA_EMO01                                  dd76515bc30b
-Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01                      dd762aac156d
-STA_ASS01 + STA_EMO01                                               dd7668817019
-STA_ASS01 + STA_EMO01 + STA_OPT01                                   dd7620a780cd
-Gender_Std + STA_ASS01                                              dd7627962890
-Gender_Std + STA_ASS01 + STA_OPT01                                  dd762778be9d
-STA_ASS01                                                           dd763f96628b
-STA_ASS01 + STA_OPT01                                                dd767e54813
-Gender_Std + STA_EMO01                                              dd7673411a3d
-Gender_Std + STA_EMO01 + STA_OPT01                                  dd76304a2bac
-STA_EMO01                                                           dd762a1fb44a
-STA_EMO01 + STA_OPT01                                               dd76521907dc
-Gender_Std + STA_OPT01                                               dd76e628e9f
-Gender_Std                                                            dd76491b2a
-STA_OPT01                                                           dd763217f49a
-SiteID                                                              dd7643be439d
-SiteID + Gender_Std                                                 dd7642bbc427
-SiteID + STA_ASS01                                                  dd76354afeab
-SiteID + STA_EMO01                                                  dd764e95a7e2
-SiteID + STA_ENE01                                                  dd7643410ebc
-SiteID + STA_OPT01                                                  dd76642e7b22
-SiteID + Gender_Std + STA_ASS01                                     dd76520cc6be
-SiteID + Gender_Std + STA_EMO01                                     dd7644cc0e07
-SiteID + Gender_Std + STA_ENE01                                     dd7630ad10da
-SiteID + Gender_Std + STA_OPT01                                     dd76322d712d
-SiteID + STA_ASS01 + STA_EMO01                                      dd7645615b17
-SiteID + STA_ASS01 + STA_ENE01                                      dd767aa36696
-SiteID + STA_ASS01 + STA_OPT01                                      dd767da440c0
-SiteID + STA_EMO01 + STA_ENE01                                      dd762a973db1
-SiteID + STA_EMO01 + STA_OPT01                                      dd762f53454f
-SiteID + STA_ENE01 + STA_OPT01                                       dd763eb5dcf
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01                         dd7643bd65f1
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01                         dd76476fd3f5
-SiteID + Gender_Std + STA_ASS01 + STA_OPT01                         dd767ec49e76
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01                         dd761e7f95ff
-SiteID + Gender_Std + STA_EMO01 + STA_OPT01                         dd764a50a7fd
-SiteID + Gender_Std + STA_ENE01 + STA_OPT01                         dd767544f928
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01                           dd76341ed3e
-SiteID + STA_ASS01 + STA_EMO01 + STA_OPT01                          dd765d3e831d
-SiteID + STA_ASS01 + STA_ENE01 + STA_OPT01                          dd76331214be
-SiteID + STA_EMO01 + STA_ENE01 + STA_OPT01                          dd76680fe023
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             dd767cdff4fb
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_OPT01             dd76534ccac9
-SiteID + Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01             dd7656957cd8
-SiteID + Gender_Std + STA_EMO01 + STA_ENE01 + STA_OPT01             dd7670377550
-SiteID + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              dd7648f710be
-SiteID + Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 dd7612cecf9f</code></pre>
+<pre><code>                                                                 bf
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 1943.687
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             1920.492
+Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01             1892.657
+Gender_Std + STA_ASS01 + STA_ENE01                         1881.470
+STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              1831.107
+STA_ASS01 + STA_EMO01 + STA_ENE01                          1796.292
+                                                                  error
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 1.193456e-04
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             2.369470e-07
+Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01             4.057525e-07
+Gender_Std + STA_ASS01 + STA_ENE01                         1.154868e-05
+STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              6.819002e-05
+STA_ASS01 + STA_EMO01 + STA_ENE01                          1.423306e-05
+                                                                               time
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 Wed Nov  1 08:18:36 2023
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             Wed Nov  1 08:18:36 2023
+Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01             Wed Nov  1 08:18:36 2023
+Gender_Std + STA_ASS01 + STA_ENE01                         Wed Nov  1 08:18:36 2023
+STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              Wed Nov  1 08:18:36 2023
+STA_ASS01 + STA_EMO01 + STA_ENE01                          Wed Nov  1 08:18:36 2023
+                                                                   code
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01 e0135525e10c
+Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01             e01323a10842
+Gender_Std + STA_ASS01 + STA_ENE01 + STA_OPT01             e01312537ccc
+Gender_Std + STA_ASS01 + STA_ENE01                         e0137f4cfd1f
+STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01              e0133fcfcfaa
+STA_ASS01 + STA_EMO01 + STA_ENE01                          e01320cb0b31</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The column we are interested in is bf, the Bayes Factor, which is a ratio of the likelihood of different models to a intercept only model (i.e. a horizontal line). So the best model with the variables I input is: STA_CUR01 ~ Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01, which has a bf of 1943 so us 1943 times better than an intercept only model</span></span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span>output<span class="sc">%&gt;%</span></span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(bf<span class="sc">&gt;</span><span class="dv">100</span>) <span class="co"># Get rid of NAs and there are lots of combinations of models so only plot the best!</span></span>
-<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(output, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(<span class="fu">rownames</span>(output), <span class="sc">-</span> bf), <span class="at">y=</span>bf, <span class="at">fill=</span><span class="fu">rownames</span>(output)))<span class="sc">+</span></span>
-<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>, <span class="at">size=</span><span class="dv">5</span>))<span class="sc">+</span></span>
-<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The column we are interested in is bf, the Bayes Factor, which is a ratio of the likelihood of different models to a intercept only model (i.e. a horizontal line). So the best model with the variables I input is: STA_CUR01 ~ Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01, which has a bf of 1943 so us 1943 times better than an intercept only model</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>output<span class="ot">&lt;-</span>output<span class="sc">%&gt;%</span></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(bf<span class="sc">&gt;</span><span class="dv">100</span>) <span class="co"># Get rid of NAs and there are lots of combinations of models so only plot the best!</span></span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(output, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(<span class="fu">rownames</span>(output), <span class="sc">-</span> bf), <span class="at">y=</span>bf, <span class="at">fill=</span><span class="fu">rownames</span>(output)))<span class="sc">+</span></span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>, <span class="at">size=</span><span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="OECDCuriosity2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># It is interesting to note how explanatory powerful even quite simple models are: STA_ASS01 + STA_ENE01 does surprisingly well! It explains 91% of the more complex Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01</span></span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I get an error message when I try to load the BayesFactor package for some reason. I'll keep trying with it... Interesting finding about the fit with assertiveness and energy though!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># It is interesting to note how explanatory powerful even quite simple models are: STA_ASS01 + STA_ENE01 does surprisingly well! It explains 91% of the more complex Gender_Std + STA_ASS01 + STA_EMO01 + STA_ENE01 + STA_OPT01</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="co"># I get an error message when I try to load the BayesFactor package for some reason. I'll keep trying with it... Interesting finding about the fit with assertiveness and energy though!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-anderson2004model" class="csl-entry" role="listitem">
+Anderson, D, and K Burnham. 2004. <span>“Model Selection and Multi-Model Inference.”</span> <em>Second. NY: Springer-Verlag</em> 63 (2020): 10.
+</div>
 <div id="ref-goldberg1993" class="csl-entry" role="listitem">
 Goldberg, Lewis R. 1993. <span>“The Structure of Phenotypic Personality Traits.”</span> <em>American Psychologist</em> 48 (1): 26–34. <a href="https://doi.org/10.1037/0003-066X.48.1.26">https://doi.org/10.1037/0003-066X.48.1.26</a>.
 </div>
